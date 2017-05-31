@@ -1,0 +1,14 @@
+<%= form_for @boat do |f| %>
+
+          <%= f.label :name, html: {class: "formLabel"} %>
+          <%= f.text_field :name, autofocus: true %><br> <br>
+
+          <%= f.label :containers, html: {class: "formLabel"} %>
+          <%= f.text_field :containers %><br> <br>
+
+          <%= f.label :location, html: {class: "formLabel"} %>
+          <%= f.select(:location, ["Bahamas", "Canada", "Chile", "Jamaica", "Mexico", "New York", "North Carolina"]) %><br> <br>
+
+          <%= f.submit html: {id: "boatFormBtn", class: "btn"} %>
+
+        <% end %>

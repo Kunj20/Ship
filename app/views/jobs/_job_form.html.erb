@@ -1,0 +1,23 @@
+<%= form_for @job do |f| %>
+
+          <%= f.label :name, html: {class: "formLabel"} %>
+          <%= f.text_field :name, autofocus: true %><br> <br>
+
+          <%= f.label :description, html: {class: "formLabel"} %>
+          <%= f.text_field :description %><br> <br>
+
+          <%= f.label :containers, html: {class: "formLabel"} %>
+          <%= f.text_field :containers %><br> <br>
+
+          <%= f.label :cost, html: {class: "formLabel"} %>
+          <span>$ &nbsp;</span><%= f.text_field :cost %><br> <br>
+
+          <%= f.label :origin, html: {class: "formLabel"} %>
+          <%= f.select(:origin, ["Bahamas", "Canada", "Chile", "Jamaica", "Mexico", "New York", "North Carolina"]) %><br> <br>
+
+          <%= f.label :destination, html: {class: "formLabel"} %>
+          <%= f.select(:destination, ["Bahamas", "Canada", "Chile", "Jamaica", "Mexico", "New York", "North Carolina"]) %><br> <br>
+
+          <%= f.submit html: {id: "jobFormBtn", class: "btn"} %>
+
+        <% end %>

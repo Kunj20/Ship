@@ -1,0 +1,13 @@
+    <%= form_for @assignment do |f| %>
+
+        <%= f.label "Job: ", html: {class: "formLabel"} %>
+        <!-- job drop down -->
+        <%= f.select(:job_id, @jobs.collect {|j| [j.name, j.id]} ) %><br> <br>
+
+        <%= f.label "Boat: ", html: {class: "formLabel"} %>
+        <!-- boats drop down -->
+        <%= f.select(:boat_id, @boats.collect {|b| [b.name, b.id]} ) %><br> <br>
+
+        <%= f.submit "assign", html: {id: "assignFormBtn", class: "btn"} %>
+
+    <% end %>

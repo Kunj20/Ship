@@ -1,0 +1,30 @@
+<div class="contentContainer">
+
+  <!-- <div class="logo">
+    <%= image_tag('anchorLogo.jpg', size: '100x100', alt: 'Anchor Logo') %>
+  </div> -->
+
+  <div class="mainHeading">
+    <h1>Welcome to the Shipyard</h1>
+  </div>
+
+  
+  <p class="navbar-text pull-right">
+  <% if employee_signed_in? %>
+    Logged in as <strong><%= current_employee.email %></strong>.
+    <%= link_to 'Edit profile', edit_employee_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_employee_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+  <div class="homeBtns">
+    <%= form_tag("/employees/sign_in", :method => :get) do %>
+      <%= submit_tag "login", class: "btn", id: "hb1"%>
+    <% end %>
+
+    <%= form_tag("/employees/sign_up", :method => :get) do %>
+      <%= submit_tag "sign up", class: "btn", id: "hb2"%>
+    <% end %>
+  </div>
+  <% end %>
+  </p>
+
+</div>
